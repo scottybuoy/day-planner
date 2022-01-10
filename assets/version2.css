@@ -1,6 +1,6 @@
 body {
     line-height: 6;
-    background-color: rgb(123, 132, 148);
+    background-color: rgb(108, 117, 133);
   }
 
 #planner-container {
@@ -67,3 +67,13 @@ button:focus {
     margin: 2px;
     width: 85%;
 }
+
+.future {
+    background-color: rgb(235, 235, 235);
+    border-style: none;
+    margin: 2px;
+    width: 85%;
+}
+
+
+
