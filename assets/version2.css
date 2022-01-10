@@ -75,5 +75,9 @@ button:focus {
     width: 85%;
 }
 
-
+.replacements {
+    display: inline;
+    width: 85%;
+    background-color: white;
+}
 

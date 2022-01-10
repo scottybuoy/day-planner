@@ -87,16 +87,64 @@ var inputId = $(`#${zeroTest}`);
 //     console.log("testingg"); 
 // })
 
-for (i = 0; i < timeArrayFull.length; i++) {
-    var actEntById = $(`#${i}`);
-    activityEntries[i] = actEntById.val();
+// $(document).on("submit", function(event) {
+//     event.preventDefault();
+//     for (i = 0; i < timeArrayFull.length; i++) {
+//         activityEntries[i] = "fuck"; 
+//     }
+//     console.log(activityEntries);
+// });
+
+    // for (i = 0; i < timeArrayFull.length; i++) {
+    //     var actEntById = $(`#${i}`);
+    //     activityEntries[i] = "fuck mate";
     
-}
-console.log(activityEntries);
+
+// SETS VALUE OF first activity input TO STORAGE
 // $(document).on("submit", function(event) {
 //     event.preventDefault();
 //     localStorage.setItem("dayPlanTest", inputId.val());
 //     console.log("testingg"); 
 // })
+
+// same as above WORKS
+// $(document).on("submit", function(event) {
+//     event.preventDefault();
+//     localStorage.setItem("dayPlanTest", $("#0").val());
+//     localStorage.setItem("dayPlanTest", $(`#${zeroTest}`).val());
+//     console.log("testingg"); 
+// });
+
+
+// sets object of activites to localStorage SUCCESSFULLY
+$(document).on("submit", function(event) {
+    event.preventDefault();
+    var activities = {
+        0: $("#0").val(), 1: $("#1").val(), 2: $("#2").val(), 3: $("#3").val(),
+        4: $("#4").val(), 5: $("#5").val(), 6: $("#6").val(), 7: $("#7").val(),
+        8: $("#8").val(), 9: $("#9").val(), 10: $("#10").val(), 11: $("#11").val(),
+        12: $("#12").val(), 13: $("#13").val(), 14: $("#14").val(), 15: $("#15").val(),
+        17: $("#17").val(), 18: $("#18").val(), 19: $("#19").val(), 20: $("#20").val(),
+        21: $("#21").val(), 22: $("#22").val(), 23: $("#23").val(), 24: $("#24").val(),
+    }
+    localStorage.setItem("activities", JSON.stringify(activities));
+    displayActivities();
+});
+
+// function displayActivities() {
+//     var pinnedActivities = JSON.parse(localStorage.getItem("activities"));
+//     var newEls = $("<p>");
+//     // var getId = parseInt(pinnedActivities[i]);
+//     for (i = 0; i < timeArrayFull.length; i++) {
+//         if (pinnedActivities[i] !== null) {
+//             $(`#${i}`).replaceWith(newEls);
+//             newEls.text("heywhattt");
+//             newEls.attr("class", "past");
+//         } else {
+//             return;
+//         }
+//     }
+// }
+
 
 
