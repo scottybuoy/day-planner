@@ -1,8 +1,10 @@
-// var today = moment();
+var now = moment().format("H");
 var dayMonthYear = moment().format("MMMM Do YYYY");
 var hourMinute = moment().format("h:mm a");
 var timeArrayAm = [];
 var timeArrayPm = [];
+var threePm = moment().set("hour", 15);
+
 
 // fill arrays with times of day
 for (i = 0; i < 12; i++) {
@@ -33,18 +35,26 @@ for (i = 0; i < timeArrayFull.length; i++) {
     var button = $("<input>");
     form.attr("class", "form")
     label.attr("class", "label");
-    input.attr({class: "activity", type: "text"});
+    input.attr({class: "activity", type: "text", "id": i});
     button.attr({class: "button", type: "submit", value: "Pin"});
     label.text(timeArrayFull[i]);
     $("#planner-container").append(form);
     form.append(label);
     form.append(input);
     form.append(button);
+    var getHour = input.attr("id");
+    if (getHour < now) {
+        input.attr("class", "past");
+    } else if (getHour === now) {
+        input.attr("class", "present");
+    } else {
+
+    }
 }
 
+// assign numbers in class to activity divs that correspond to time of day, for color-coded functionality
+for (i = 0; i < timeArrayFull.length; i++) {
+    input.attr("id", i);
+}
 
-
-
-
-
-console.log(hourMinute);
+console.log(now);

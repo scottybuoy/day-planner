@@ -13,6 +13,7 @@ body {
     padding: 15px;
     display: flex;
     justify-content: space-around;
+    align-items: center;
     border-radius: 20px 20px 8px 8px;
     color: white;
 }
@@ -50,4 +51,19 @@ button:focus {
     border-style: none;
     border-radius: 0px 5px 5px 0px;
     font-style: italic;
+}
+
+/* IDs for color coding */
+.past {
+    background-color: rgb(156, 156, 156);
+    border-style: none;
+    margin: 2px;
+    width: 85%;
+}
+
+.present {
+    background-color: rgb(179, 211, 189);
+    border-style: none;
+    margin: 2px;
+    width: 85%;
 }
